@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= favicon_link_tag asset_path('DW-logo.jpg') %>
+    <title>My Blogger</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/admin_navbar' %>
+    <p class="flash"><%= flash.notice %></p>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
