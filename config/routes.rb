@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:destroy]
   end
 
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:show, :create]
+  end
+
   resources :messages, only: [:create, :new]
 end

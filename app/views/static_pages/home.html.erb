@@ -1,5 +1,29 @@
-<div class="c-container">
-  <div class="c-container__inner">
-    <h2 class="c-header">Click <%= link_to 'HERE', admin_root_path, class: "c-header__link" %> to access the admin panel</h2>
-  </div>
+<%= render 'layouts/navbar'%>
+
+<div class="c-articles">
+  <% @articles.each do |article| %>
+    <li class="c-articles__item">
+      <div class="c-articles__item--image">
+        <%= image_tag(article.image, class: "c-articles__item--image_hero") %>
+      </div>
+      <div class="c-articles__item--main">
+        <h4 class="c-articles__item--main_title">
+          <%= article.title %>
+        </h4>
+        <p class="c-articles__item--main_body">
+          <%= article.body %>
+        </p>
+        <div class="c-articles__item--main_footer">
+          <p class="c-articles__item--main_footer__date">Posted on 
+            <%= article.created_at.strftime("%A, %b, %d") %>
+          </p>
+          <p class="c-articles__item--main_footer__link">
+          <!--
+            <%= link_to 'View more', article_path(article) %>
+          -->
+          </p>
+        </div>
+      </div>
+    </li>
+  <% end %> 
 </div>
