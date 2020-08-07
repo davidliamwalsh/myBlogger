@@ -1,0 +1,36 @@
+.c-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 1200px;
+  margin: auto;
+  margin-bottom: 4em;
+
+  &__logo {
+    font-size: 26px;
+  }
+
+  &__lists {
+    &--item {
+      list-style: none;
+
+      a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .c-nav {
+    &__logo {
+      font-size: 30px;
+    }
+    &__list--item a {
+      font-size: 22px;
+    }
+  }
+}
